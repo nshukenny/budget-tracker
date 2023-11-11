@@ -10,6 +10,8 @@ import { CssBaseline } from '@mui/material';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch } from 'react-redux';
+Navigate
+
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const dispatch = useDispatch();

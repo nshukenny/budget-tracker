@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { tranList } from "./Data";
 
-// Define the action type for filtering transactions
+
 const FILTER_TRANSACTIONS = 'FILTER_TRANSACTIONS';
 
 const tranSlice = createSlice({
@@ -31,7 +31,7 @@ const tranSlice = createSlice({
     },
     [FILTER_TRANSACTIONS]: (state, action) => {
         const { searchQuery } = action.payload;
-        // Filter transactions based on the searchQuery and return a new state object
+        
         return state.filter((tran) =>
           tran.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
           tran.description.toLowerCase().includes(searchQuery.toLowerCase())
