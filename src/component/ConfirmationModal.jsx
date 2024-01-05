@@ -3,7 +3,7 @@ import { Modal, Box, Typography, Button } from '@mui/material';
 
 const ConfirmationModal = ({ open, onClose, onConfirm, title }) => {
   return (
-    <Modal open={open} onClose={onClose}>
+    <Modal open={open} onClose={onClose} >
       <Box
         sx={{
           position: 'absolute',

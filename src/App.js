@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
-import Navbar from "./Navbar";
-import Feed from "./Feed";
+import Navbar from "./component/Navbar";
+import Feed from "./views/Feed";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Report from './Report';
+import Report from './views/Report';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" component={Feed} />
-          <Route path="report" element={<Report />} />
+          <Route path="/report" componet={<Report />} />
         </Switch>
       </Router>
     </Box>
