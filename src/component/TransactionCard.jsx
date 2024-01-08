@@ -21,7 +21,7 @@ const TransactionCard = ({ transaction, onEditClick, onDeleteClick}) => {
           Description: {transaction.description}
         </Typography>
         <Button onClick={() => onEditClick(transaction)}>Edit</Button>
-        <Button onClick={() => onDeleteClick(transaction.id)}>Delete</Button>
+        <Button onClick={() => onDeleteClick(transaction)}>Delete</Button>
       </CardContent>
     </Card>
   );
