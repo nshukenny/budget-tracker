@@ -1,7 +1,6 @@
-// EditTransactionForm.js
-
 import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
 
 const EditTransactionModal = ({ selectedTransaction, onEditConfirm, onClose }) => {
 const [editedTransaction, setEditedTransaction] = useState(selectedTransaction);
@@ -72,7 +71,7 @@ const handleEditConfirm = () => {
         }
         fullWidth
       />
-      <Button type="submit" variant="contained" color="primary">
+      <Button type="submit" variant="contained" color="primary" endIcon={<SaveAltIcon />} sx={{ marginTop: '10px' }}>
         Save
       </Button>
     </form>

@@ -10,11 +10,12 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/" component={Feed} />
-          <Route path="/report" componet={<Report />} />
+          <Route path="/" exact component={Feed} />
+          <Route path="/report" component={Report} />
         </Switch>
       </Router>
     </Box>
   );
 }
+
 export default App;

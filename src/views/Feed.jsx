@@ -1,16 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  Box,
-  Button,
-  Pagination,
-  TextField,
-  IconButton,
-  Menu,
-  MenuItem,
-} from "@mui/material";
+import {Dialog,DialogTitle,DialogContent,Box,Button,Pagination,TextField,IconButton,Menu,MenuItem,} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
 import { tranList } from "../store/Data";
@@ -40,6 +29,7 @@ const Feed = () => {
   const itemsPerPage = 6;
   const dispatch = useDispatch();
   const [isAddModalOpen, setAddModalOpen] = useState(false);
+
   const openAddModal = () => {
     setAddModalOpen(true);
   };
@@ -124,6 +114,7 @@ const Feed = () => {
   const handleSearch = () => {
     dispatch({ type: FILTER_TRANSACTIONS, searchQuery });
   };
+
   const handleSort = () => {
     const sortedTrans = [...filteredTrans].sort((a, b) => {
       return 0;
@@ -139,7 +130,7 @@ const Feed = () => {
   return (
     <Box>
       <Box>
-        <div
+        <Box
           style={{
             display: "flex",
             alignItems: "center",
@@ -170,9 +161,9 @@ const Feed = () => {
           >
             <SearchIcon />
           </IconButton>
-        </div>
+        </Box>
       </Box>
-      <div
+      <Box
         style={{
           display: "flex",
           alignItems: "center",
@@ -192,9 +183,9 @@ const Feed = () => {
             setNextId(nextId + 1);
           }}
         />
-      </div>
+      </Box>
       <Box>
-        <div
+        <Box
           style={{
             display: "flex",
             alignItems: "center",
@@ -202,7 +193,7 @@ const Feed = () => {
             marginTop: "-5%",
           }}
         >
-          <div style={{ marginRight: "10px" }}>
+          <Box style={{ marginRight: "10px" }}>
             <PopupState variant="popover" popupId="demo-popup-menu">
               {(popupState) => (
                 <React.Fragment>
@@ -246,8 +237,8 @@ const Feed = () => {
                 </React.Fragment>
               )}
             </PopupState>
-          </div>
-          <div style={{ marginRight: "10px" }}>
+          </Box>
+          <Box style={{ marginRight: "10px" }}>
             <PopupState variant="popover" popupId="demo-popup-menu">
               {(popupState) => (
                 <React.Fragment>
@@ -275,11 +266,11 @@ const Feed = () => {
                 </React.Fragment>
               )}
             </PopupState>
-          </div>
-        </div>
+          </Box>
+        </Box>
         <Button onClick={handleSort}></Button>
       </Box>
-      <div
+      <Box
         style={{
           display: "flex",
           flexWrap: "wrap",
@@ -297,7 +288,7 @@ const Feed = () => {
             onCloseMenu={handleCloseMenu}
           />
         ))}
-      </div>
+      </Box>
       <Dialog
         open={editModalOpen}
         onClose={() => {
@@ -316,7 +307,7 @@ const Feed = () => {
           )}
         </DialogContent>
       </Dialog>
-      <div
+      <Box
         style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
       >
         <Pagination
@@ -325,7 +316,7 @@ const Feed = () => {
           onChange={handlePageChange}
           color="primary"
         />
-      </div>
+      </Box>
       <ConfirmationModal
         open={showEditConfirmation}
         onClose={() => setShowEditConfirmation(false)}
@@ -347,3 +338,4 @@ const Feed = () => {
 };
 
 export default Feed;
+
